@@ -1,5 +1,5 @@
 import requests
-from utilities import apiKey
+from config import apiKey
 
 r = requests.get(f'https://rest.coinapi.io/v1/assets/?apikey={apiKey}') #Esta API me trae todas las monedas que hay
 
@@ -14,6 +14,9 @@ for item in general_list:
         crypto_list.append(item["asset_id"])
 
 crypto_coin = input("Introduce a crypto: ").upper()
+
+print("Crypto: ", len(crypto_list))
+print("Crypto: ", len(general_list) - len(crypto_list))
 
 while crypto_coin != "" and crypto_coin.isalpha():
     
