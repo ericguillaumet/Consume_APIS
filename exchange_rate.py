@@ -1,6 +1,6 @@
 import requests
+from config import apiKey
 
-apiKey = '805F252E-DE6E-4755-98DC-4C480FDEFC18'
 crypto_coin = input("Introduce a crypto: ").upper()
 
 while  crypto_coin != "" and crypto_coin.isalpha():
