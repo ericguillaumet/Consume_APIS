@@ -1,2 +1,3 @@
 api_environment/
 **/__pycache__/**
+.vscode/
