@@ -1,5 +1,8 @@
 import requests
 
+class ModelError(Exception):
+    pass
+
 class AllCoinsApiIO: 
     def __init__(self):
         self.cryptos = []
@@ -24,13 +27,16 @@ class Exchange:
         self.crypto = crypto
         self.rate = None
         self.time = None
+        self.r = None
+        self.result = None
 
     def updateExchange(self, apiKey):
-        r = requests.get(f'https://rest.coinapi.io/v1/exchangerate/{self.crypto}/EUR?apikey={apiKey}')
-        result = r.json()
+        self.r = requests.get(f'https://rest.coinapi.io/v1/exchangerate/{self.crypto}/EUR?apikey={apiKey}')
+        self.result = self.r.json()
 
-        if r.status_code == 200:
-            self.rate = result ['rate']
+        if self.r.status_code == 200:
+            self.rate = self.result ['rate']
+            self.time = self.result ['time']
 
         else:
-            result['error']
+            raise ModelError(f"status: {self.r.status_code} error: {self.result['error']}")

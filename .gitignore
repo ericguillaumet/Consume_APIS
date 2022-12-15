@@ -1,4 +1,4 @@
 api_environment/
 **/__pycache__/**
 .vscode/
-config_apikey.py/
+/config.py

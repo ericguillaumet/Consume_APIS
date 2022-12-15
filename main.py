@@ -1,3 +1,3 @@
 import requests
-from config_apikey import apiKey
+from config import apiKey
 
