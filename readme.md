@@ -11,7 +11,10 @@ Programa hecho en Python para recuperar el valor en Euros de una crypto desde ww
 apiKey = "4534asdf97gfds00a33405032a132"
 ```
 ### Instalación de dependencias
+
 - En su entorno de Python, ejecutar siguiente comando:
 ```
 pip install -r requirements.txt
 ```
+
+- Las librerias utilizadas son "request" y "pygame"

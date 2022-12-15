@@ -1,5 +1,5 @@
 import requests
-from config import apiKey
+from config_apikey import apiKey
 
 r = requests.get(f'https://rest.coinapi.io/v1/assets/?apikey={apiKey}') #Esta API me trae todas las monedas que hay
 

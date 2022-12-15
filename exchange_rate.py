@@ -1,5 +1,5 @@
 import requests
-from config import apiKey
+from config_apikey import apiKey
 
 crypto_coin = input("Introduce a crypto: ").upper()
 
