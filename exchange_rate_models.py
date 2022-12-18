@@ -6,11 +6,11 @@ allcoins = AllCoinsApiIO()
 #Ejecutar el metodo getCoins que consulta y carga lista de coins
 allcoins.getCoins(apiKey)
 
-print("La cantidad de criptos son {} ,\
-       y la de no criptos son {}"\
+print("The amount of crypto is: {} ,\
+       the amount of fiat is: {}"\
       .format(len(allcoins.cryptos),len(allcoins.no_cryptos)))
 
-crypto = input("Ingrese moneda digital conocida: ").upper()
+crypto = input("Introduce a crypto: ").upper()
 
 while crypto != "" and crypto.isalpha():
     if crypto in allcoins.cryptos:
@@ -23,4 +23,4 @@ while crypto != "" and crypto.isalpha():
         except ModelError as error:# Si falla imprime error
             print(error)    
 
-    crypto = input("Ingrese moneda digital conocida: ").upper()
+    crypto = input("Introduce a crypto: ").upper()

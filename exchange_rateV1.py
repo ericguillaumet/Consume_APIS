@@ -2,6 +2,7 @@ import requests
 from config import apiKey
 
 r = requests.get(f'https://rest.coinapi.io/v1/assets/?apikey={apiKey}') #Esta API me trae todas las monedas que hay
+#Método .get = solicitar información
 
 if r.status_code != 200:
     raise Exception( "Error in the enquiry of assets: {}".format(r.status_code))
