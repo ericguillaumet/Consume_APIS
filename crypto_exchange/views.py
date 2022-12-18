@@ -6,7 +6,7 @@ class Views():
         pass
 
     def insertCoin(self):
-        crypto = input("Introduce a crypto: ").upper()
+        crypto = input("Introduce a fiat: ").upper()
         return crypto
 
     def availableCoins(self, allcoin): #Lista de monedas disponibles
@@ -15,7 +15,7 @@ class Views():
             .format(len(allcoin.cryptos),len(allcoin.no_cryptos)))
 
     def getRateExchange(self, exchange):
-        print( "{:,.2f}€".format(exchange.rate).replace(",","@").replace(".",",").replace("@",".") )
+        print( "{:,.8f}€".format(exchange.rate).replace(",","@").replace(".",",").replace("@",".") )
 
     def getError(self, error):
         print(error) 

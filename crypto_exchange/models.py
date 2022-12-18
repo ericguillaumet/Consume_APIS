@@ -40,3 +40,22 @@ class Exchange:
 
         else:
             raise ModelError(f"status: {self.r.status_code} error: {self.result['error']}")
+
+class ExchangeFiatToBTC:
+    def __init__(self, fiat):
+        self.fiat = fiat
+        self.rate = None
+        self.time = None
+        self.r = None
+        self.result = None
+
+    def updateExchange(self, apiKey):
+        self.r = requests.get(f'https://rest.coinapi.io/v1/exchangerate/{self.fiat}/BTC?apikey={apiKey}')
+        self.result = self.r.json()
+
+        if self.r.status_code == 200:
+            self.rate = self.result ['rate']
+            self.time = self.result ['time']
+
+        else:
+            raise ModelError(f"status: {self.r.status_code} error: {self.result['error']}")
