@@ -1,3 +1,5 @@
-import requests
-from config import apiKey
+from crypto_exchange.controllers import CryptoExchangeController
 
+software = CryptoExchangeController()
+
+software.executeSoftware()
